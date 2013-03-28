@@ -12,12 +12,12 @@ namespace UnitTestProject1
             var exception=new RaiseException();
             try
             {
-                exception.NameOfUser("Salam");  
+                exception.NameOfUser("Hi");  
             }
             catch (Exception ex)
             {
 
-                Assert.AreEqual(ex.Message, "Salam is not name");
+                Assert.AreEqual(ex.Message, "Hi is not name");
             }
             
         }
