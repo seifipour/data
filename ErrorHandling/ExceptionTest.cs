@@ -7,7 +7,7 @@ namespace UnitTestProject1
     public class ExceptionTest
     {
         [TestMethod]
-        public void If_NameOfUser_Is_Equal_Salam_Return_Exception()
+        public void If_NameOfUser_Is_Equal_Hi_Return_Exception()
         {
             var exception=new RaiseException();
             try

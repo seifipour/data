@@ -7,59 +7,38 @@ namespace ClassLibrary1
     {
         public void NameOfUser(string name)
         {
-            if(name=="Salam")
+            if (name == "Hi")
             {
-                throw new ArgumentException("Salam is not name");
+                throw new ArgumentException("Hi is not name");
             }
         }
-       public string MultipleCatches()
-       {
-           string exceptionMessage = string.Empty;
-           try
-           {
-               NameOfUser("Salam");
-           }
-           catch (DivideByZeroException exception)
-           {
-               
-              exceptionMessage="Divided by Zero";
-           }
-           catch(ArgumentException exception)
-           {
-               exceptionMessage = "Argument Exception";
-           }
-           catch(Exception exception)
-           {
-               exceptionMessage = "General Exception";
-           }
-           finally
-           {
-               exceptionMessage = exceptionMessage + "Finally";
-           }
-           return exceptionMessage;
-       }
-        public void Innercatchblock()
+
+        public string MultipleCatches()
         {
+            string exceptionMessage = string.Empty;
             try
             {
-                MultipleCatches();
+                NameOfUser("Hi");
             }
-            catch (Exception)
+            catch (DivideByZeroException exception)
             {
-                
-                throw new Exception();
+
+                exceptionMessage = "Divided by Zero";
             }
+            catch (ArgumentException exception)
+            {
+                exceptionMessage = "Argument Exception";
+            }
+            catch (Exception exception)
+            {
+                exceptionMessage = "General Exception";
+            }
+            finally
+            {
+                exceptionMessage = exceptionMessage + "Finally";
+            }
+            return exceptionMessage;
         }
-    }
-    [Serializable]
-    public class MyException : Exception
-    {
-        public MyException() { }
-        public MyException(string message) : base(message) { }
-        public MyException(string message, Exception inner) : base(message, inner) { }
-        protected MyException(
-          System.Runtime.Serialization.SerializationInfo info,
-          System.Runtime.Serialization.StreamingContext context)
-            : base(info, context) { }
+
     }
 }
